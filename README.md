@@ -34,7 +34,7 @@ I turn security concepts into small, testable projects, with an emphasis on resp
   - Checks 26 well-known paths: `.env` variants, `.git/config`, `.git/index`, `config.php` / `wp-config.php` backups, SQL dumps, `backup.zip`, `.ssh/id_rsa`, `server-status`, `docker-compose.yml`, `.bash_history` and more.
   - 10 worker threads pull paths from a shared `Queue`; a lock keeps the coloured console output readable.
   - Requests are sent with `allow_redirects=False`, so a redirect to the home page is not mistaken for a hit. Each request has a 7-second timeout.
-  - Explains each result while it runs: `200` readable, `403` there but blocked, `401` asks for credentials. `404`s are hidden to keep the output short.
+  - Explains each result while it runs: `200` readable, `403` there but blocked, `401` asks for credentials. `404` responses are hidden to keep the output short.
   - Download: [Windows build in Releases](https://github.com/memx13/Extension_Scanner/releases).
 
   </details>
