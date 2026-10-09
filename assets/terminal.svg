@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 262" width="600" height="262" role="img" aria-labelledby="t d">
+  <title id="t">memx13 terminal</title>
+  <desc id="d">whoami prints Mehmet Emin Mağnısalıoğlu, cybersecurity learner. Extension Scanner status legend: 200 OK readable, 403 Forbidden there but blocked, 401 Unauthorized wants credentials. 26 paths, 10 threads, redirects off.</desc>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 15px; }
+    .bar { font-size: 12px; fill: #8b949e; }
+    .p { fill: #00ff9d; }
+    .c { fill: #e6edf3; }
+    .o { fill: #c9d1d9; }
+    .m { fill: #8b949e; }
+    .g { fill: #3fb950; }
+    .r { fill: #ff7b72; }
+    .b { fill: #79c0ff; }
+    .y { fill: #39c5cf; }
+    /* Everything is visible by default; the animations only hide the start state.
+       If a viewer does not run CSS animations, the full terminal is still shown. */
+    .line { animation: show 1ms linear backwards; }
+    .cover { fill: #0d1117; transform-box: fill-box; transform-origin: 100% 50%; transform: scaleX(0); animation: type 500ms steps(6, end) backwards; }
+    .cover.long { animation-duration: 1300ms; animation-timing-function: steps(35, end); }
+    .cur { fill: #00ff9d; animation: show 1ms linear 5300ms backwards, blink 1100ms linear 5300ms infinite; }
+    .l1 { animation-delay: 300ms; }  .k1 { animation-delay: 500ms; }
+    .l2 { animation-delay: 1300ms; }
+    .l3 { animation-delay: 1900ms; } .k3 { animation-delay: 2100ms; }
+    .l4 { animation-delay: 3700ms; }
+    .l5 { animation-delay: 4100ms; }
+    .l6 { animation-delay: 4500ms; }
+    .l7 { animation-delay: 4900ms; }
+    .l8 { animation-delay: 5300ms; }
+    @keyframes show { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes type { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .line, .cover, .cur { animation: none; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="599" height="261" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <path d="M0.5 34.5h599" stroke="#30363d"/>
+  <circle cx="20" cy="18" r="5.5" fill="#ff5f57"/>
+  <circle cx="38" cy="18" r="5.5" fill="#febc2e"/>
+  <circle cx="56" cy="18" r="5.5" fill="#28c840"/>
+  <text class="bar" x="300" y="22" text-anchor="middle">memx13@github: ~</text>
+
+  <g class="line l1">
+    <text x="20" y="62"><tspan class="p">$</tspan><tspan class="c" x="40">whoami</tspan></text>
+    <rect class="cover k1" x="38" y="46" width="70" height="22"/>
+  </g>
+  <g class="line l2">
+    <text x="20" y="86"><tspan class="o">Mehmet Emin Mağnısalıoğlu</tspan><tspan class="m"> · cybersecurity learner</tspan></text>
+  </g>
+
+  <g class="line l3">
+    <text x="20" y="118"><tspan class="p">$</tspan><tspan class="c" x="40">python main.py</tspan><tspan class="m" x="190"># Extension Scanner</tspan></text>
+    <rect class="cover long k3" x="38" y="102" width="340" height="22"/>
+  </g>
+  <g class="line l4">
+    <text x="20" y="142"><tspan class="g">[+] 200 OK</tspan><tspan class="o" x="230">readable, data leak risk</tspan></text>
+  </g>
+  <g class="line l5">
+    <text x="20" y="166"><tspan class="r">[!] 403 FORBIDDEN</tspan><tspan class="o" x="230">there, but access is blocked</tspan></text>
+  </g>
+  <g class="line l6">
+    <text x="20" y="190"><tspan class="b">[?] 401 UNAUTHORIZED</tspan><tspan class="o" x="230">wants credentials</tspan></text>
+  </g>
+  <g class="line l7">
+    <text x="20" y="214"><tspan class="y">[*]</tspan><tspan class="m"> 26 paths · 10 threads · redirects off</tspan></text>
+  </g>
+
+  <g class="line l8">
+    <text x="20" y="244"><tspan class="p">$</tspan></text>
+  </g>
+  <rect class="cur" x="40" y="231" width="9" height="16"/>
+</svg>
