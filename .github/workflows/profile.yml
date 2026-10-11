@@ -4,7 +4,10 @@
 #   visuals -> draws the contribution-graph snake and the language card,
 #              publishes the SVG files to the "output" branch
 #   recent  -> rewrites the "latest pushes" table between the
-#              <!-- recent:start --> / <!-- recent:end --> markers in README.md
+#              <!-- recent:start --> / <!-- recent:end --> markers in README.md,
+#              and the open-source contributions table (pull requests to
+#              repositories owned by someone else) between
+#              <!-- contrib:start --> / <!-- contrib:end -->.
 #
 # Only the built-in GITHUB_TOKEN is used. No personal access token or secret.
 name: Profile visuals
@@ -69,7 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   recent:
-    name: Latest pushes table
+    name: README tables
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -152,13 +155,90 @@ jobs:
                   handle.write(updated)
           PY
 
-      - name: Commit if the table changed
+      - name: Rebuild the open-source contributions table
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import urllib.parse
+          import urllib.request
+
+          owner = os.environ["OWNER"]
+          token = os.environ.get("GH_TOKEN", "")
+
+
+          def api(path):
+              headers = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
+              if token:
+                  headers["Authorization"] = "Bearer " + token
+              request = urllib.request.Request("https://api.github.com" + path, headers=headers)
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  return json.load(response)
+
+
+          def cell(text):
+              return " ".join((text or "").split()).replace("|", "\\|")
+
+
+          # Pull requests opened by the owner in repositories owned by someone else
+          query = urllib.parse.quote(f"is:pr author:{owner} -user:{owner}")
+          items = api(f"/search/issues?q={query}&per_page=100")["items"]
+
+          merged, still_open = [], []
+          for item in items:
+              merged_at = (item.get("pull_request") or {}).get("merged_at")
+              if merged_at:
+                  merged.append((item, merged_at))
+              elif item["state"] == "open":
+                  still_open.append((item, None))
+              # closed without being merged: left out
+          merged.sort(key=lambda pair: pair[1], reverse=True)
+          still_open.sort(key=lambda pair: pair[0]["created_at"], reverse=True)
+
+          descriptions = {}
+          rows = [
+              "| Project | Pull request | Status |",
+              "| --- | --- | --- |",
+          ]
+          for item, merged_at in merged + still_open:
+              repo = item["repository_url"].split("/repos/", 1)[1]
+              if repo not in descriptions:
+                  descriptions[repo] = cell(api(f"/repos/{repo}").get("description"))
+              project = f"[{repo.split('/', 1)[1]}](https://github.com/{repo})"
+              if descriptions[repo]:
+                  project += f"<br><sub>{descriptions[repo]}</sub>"
+              status = f"Merged {merged_at[:10]}" if merged_at else "Open"
+              rows.append(f"| {project} | [{cell(item['title'])}]({item['html_url']}) | {status} |")
+
+          start, end = "<!-- contrib:start -->", "<!-- contrib:end -->"
+          with open("README.md", encoding="utf-8", newline="") as handle:
+              readme = handle.read()
+          if start not in readme or end not in readme:
+              raise SystemExit("contrib:start / contrib:end markers not found in README.md")
+
+          block = start + "\n" + "\n".join(rows) + "\n" + end
+          updated = re.sub(
+              re.escape(start) + r".*?" + re.escape(end),
+              lambda match: block,
+              readme,
+              flags=re.S,
+          )
+          if updated != readme:
+              with open("README.md", "w", encoding="utf-8", newline="") as handle:
+                  handle.write(updated)
+          PY
+
+      - name: Commit if a table changed
         run: |
           if git diff --quiet; then
-            echo "Table is already up to date."
+            echo "Tables are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Refresh latest pushes table"
+          git commit -am "Refresh README tables"
           git push
