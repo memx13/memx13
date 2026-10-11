@@ -86,8 +86,6 @@ Pull requests I have sent to other open-source projects. The first one fixed twy
 | [pySigma](https://github.com/SigmaHQ/pySigma)<br><sub>Python library to parse and convert Sigma rules into queries (and whatever else you could imagine)</sub> | [Allow dashes in "1/all of" selector patterns](https://github.com/SigmaHQ/pySigma/pull/593) | Open |
 <!-- contrib:end -->
 
-The same [workflow](.github/workflows/profile.yml) rebuilds this table every day from GitHub, so merged and open pull requests stay up to date.
-
 ## Tools and technologies
 
 **Python · C# · JavaScript · Git · HTTP · Networking · CustomTkinter**
@@ -181,7 +179,7 @@ A GitHub Actions [workflow](.github/workflows/profile.yml) redraws this snake fr
 ## Get involved
 
 - Know a sensitive path the scanner should check? [Suggest it for the wordlist](https://github.com/memx13/Extension_Scanner/issues/new?title=Wordlist+suggestion%3A+%2Fpath&body=Path%3A%0A%0AWhy+it+is+worth+checking%3A%0A).
-- Missing a tool in the toolkit, or found a bug? [Open an issue](https://github.com/memx13/toolkitt/issues/new?title=Tool+idea%3A+&body=What+should+it+do%3F%0A%0AWhich+group+does+it+belong+to+%28quick+access%2C+system+%26+network%2C+security+checks%2C+maintenance%2C+utilities%29%3F%0A). The toolkit README asks for feedback there.
+- Missing a tool in the toolkit, or found a bug? [Open an issue](https://github.com/memx13/toolkit/issues/new?title=Tool+idea%3A+&body=What+should+it+do%3F%0A%0AWhich+group+does+it+belong+to+%28quick+access%2C+system+%26+network%2C+security+checks%2C+maintenance%2C+utilities%29%3F%0A). The toolkit README asks for feedback there.
 - Curious how this page updates itself? Read [`profile.yml`](.github/workflows/profile.yml).
 
 <details>
