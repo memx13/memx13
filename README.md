@@ -80,9 +80,9 @@ Pull requests I have sent to other open-source projects. The first one fixed twy
 <!-- contrib:start -->
 | Project | Pull request | Status |
 | --- | --- | --- |
+| [lgtm-ai](https://github.com/elementsinteractive/lgtm-ai)<br><sub>Your AI-powered code review companion</sub> | [fix: do not count "No newline at end of file" markers as diff lines](https://github.com/elementsinteractive/lgtm-ai/pull/247) | Merged 2026-10-11 |
 | [lgtm-ai](https://github.com/elementsinteractive/lgtm-ai)<br><sub>Your AI-powered code review companion</sub> | [fix: accept PR/MR URLs with a trailing slash or a tab path](https://github.com/elementsinteractive/lgtm-ai/pull/248) | Merged 2026-10-11 |
 | [twyn](https://github.com/elementsinteractive/twyn)<br><sub>Security tool against dependency typosquatting attacks</sub> | [fix: read files included with -r in the requirements.txt parser](https://github.com/elementsinteractive/twyn/pull/551) | Merged 2026-10-10 |
-| [lgtm-ai](https://github.com/elementsinteractive/lgtm-ai)<br><sub>Your AI-powered code review companion</sub> | [fix: do not count "No newline at end of file" markers as diff lines](https://github.com/elementsinteractive/lgtm-ai/pull/247) | Open |
 | [pySigma](https://github.com/SigmaHQ/pySigma)<br><sub>Python library to parse and convert Sigma rules into queries (and whatever else you could imagine)</sub> | [Allow dashes in "1/all of" selector patterns](https://github.com/SigmaHQ/pySigma/pull/593) | Open |
 <!-- contrib:end -->
 
