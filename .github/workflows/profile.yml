@@ -188,8 +188,13 @@ jobs:
           query = urllib.parse.quote(f"is:pr author:{owner} -user:{owner}")
           items = api(f"/search/issues?q={query}&per_page=100")["items"]
 
+          # "docs: add @owner as a contributor" only lists the owner in a README; it is not a contribution
+          self_listing = re.compile(rf"\b(add|update) @{re.escape(owner)} as a contributor\b", re.IGNORECASE)
+
           merged, still_open = [], []
           for item in items:
+              if self_listing.search(item["title"]):
+                  continue
               merged_at = (item.get("pull_request") or {}).get("merged_at")
               if merged_at:
                   merged.append((item, merged_at))
