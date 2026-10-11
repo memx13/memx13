@@ -10,6 +10,7 @@ I turn security concepts into small, testable projects, with an emphasis on resp
 
 <p align="center">
   <a href="#featured-projects"><b>Projects</b></a> ·
+  <a href="#open-source-contributions"><b>Open source</b></a> ·
   <a href="#tools-and-technologies"><b>Toolbox</b></a> ·
   <a href="#quick-quiz"><b>Quiz</b></a> ·
   <a href="#activity"><b>Activity</b></a> ·
@@ -71,6 +72,21 @@ I turn security concepts into small, testable projects, with an emphasis on resp
 | [Kitap Takip](https://gist.github.com/memx13/048f266b9d37fd88c385c071be44db8d) | Python · gist | Console reading-list app: add, list, mark as read and delete books. Rejects empty titles and authors, and keeps the list in a UTF-8 JSON file between runs. |
 
 </details>
+
+## Open source contributions
+
+Pull requests I have sent to other open-source projects. The first one fixed twyn's `requirements.txt` parser, which skipped every package pulled in with `-r`; it shipped in [twyn v6.1.5](https://github.com/elementsinteractive/twyn/releases/tag/v6.1.5).
+
+<!-- contrib:start -->
+| Project | Pull request | Status |
+| --- | --- | --- |
+| [twyn](https://github.com/elementsinteractive/twyn)<br><sub>Security tool against dependency typosquatting attacks</sub> | [fix: read files included with -r in the requirements.txt parser](https://github.com/elementsinteractive/twyn/pull/551) | Merged 2026-10-10 |
+| [lgtm-ai](https://github.com/elementsinteractive/lgtm-ai)<br><sub>Your AI-powered code review companion</sub> | [fix: accept PR/MR URLs with a trailing slash or a tab path](https://github.com/elementsinteractive/lgtm-ai/pull/248) | Open |
+| [lgtm-ai](https://github.com/elementsinteractive/lgtm-ai)<br><sub>Your AI-powered code review companion</sub> | [fix: do not count "No newline at end of file" markers as diff lines](https://github.com/elementsinteractive/lgtm-ai/pull/247) | Open |
+| [pySigma](https://github.com/SigmaHQ/pySigma)<br><sub>Python library to parse and convert Sigma rules into queries (and whatever else you could imagine)</sub> | [Allow dashes in "1/all of" selector patterns](https://github.com/SigmaHQ/pySigma/pull/593) | Open |
+<!-- contrib:end -->
+
+The same [workflow](.github/workflows/profile.yml) rebuilds this table every day from GitHub, so merged and open pull requests stay up to date.
 
 ## Tools and technologies
 
@@ -178,5 +194,6 @@ Siber güvenlik öğreniyorum; pratik güvenlik otomasyonu, ağ ve Python tabanl
 - **[Extension Scanner](https://github.com/memx13/Extension_Scanner)** — İzinli hedeflerde açıkta kalmış hassas dosya ve dizinleri arayan çok iş parçacıklı Python aracı (26 yol, 10 iş parçacığı).
 - **[SİBERTİM Toolkit](https://github.com/memx13/toolkitt)** — Sistem, ağ, kodlama ve güvenlik araçlarını CustomTkinter arayüzünde toplayan Windows masaüstü araç seti (5 grupta 40 araç).
 - Diğerleri: [Anket Smasher](https://github.com/memx13/Anket-Smasher) (Chrome eklentisi), [otobusbileti](https://github.com/memx13/otobusbileti) (C# WinForms), [Kitap Takip](https://gist.github.com/memx13/048f266b9d37fd88c385c071be44db8d) (Python konsol uygulaması).
+- **Açık kaynak katkıları:** twyn'in `requirements.txt` ayrıştırıcısında `-r` ile dahil edilen paketlerin atlanması hatasını düzelttim; düzeltme birleştirildi ve twyn v6.1.5 ile yayınlandı. Diğer katkıların güncel durumu yukarıdaki "Open source contributions" tablosunda.
 
 </details>
