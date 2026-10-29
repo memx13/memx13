@@ -12,7 +12,6 @@ I turn security concepts into small, testable projects, with an emphasis on resp
   <a href="#featured-projects"><b>Projects</b></a> ·
   <a href="#open-source-contributions"><b>Open source</b></a> ·
   <a href="#tools-and-technologies"><b>Toolbox</b></a> ·
-  <a href="#quick-quiz"><b>Quiz</b></a> ·
   <a href="#activity"><b>Activity</b></a> ·
   <a href="#principles"><b>Principles</b></a> ·
   <a href="#get-involved"><b>Get involved</b></a>
@@ -114,46 +113,6 @@ Pull requests I have sent to other open-source projects. The first one fixed twy
 | HTTP | Status-code triage, redirect handling, header and SSL certificate checks |
 | Networking | ARP sweeps, TCP port scans, DNS records, traceroute, whois |
 | CustomTkinter | The toolkit's splash screen, tool panel and output pane |
-
-## Quick quiz
-
-Four questions taken from the tools above. Click a question to open its answer.
-
-<details>
-<summary><b>1.</b> A scan returns <code>403 Forbidden</code> for <code>/.git/config</code>. Is the file there?</summary>
-
-<br>
-
-Probably, but it is a lead and not proof. Extension Scanner reports `403` as "there, but access is blocked", because the server (or a WAF in front of it) refused the request instead of answering `404`. Some servers return `403` for every dotfile whether it exists or not, so the next step is to compare with a path that cannot exist.
-
-</details>
-
-<details>
-<summary><b>2.</b> Why does Extension Scanner send its requests with redirects turned off?</summary>
-
-<br>
-
-Many sites answer unknown paths with a redirect to the home page. Following it ends in a `200`, and every path in the wordlist would look exposed. With `allow_redirects=False` the scanner judges the first response it gets.
-
-</details>
-
-<details>
-<summary><b>3.</b> Decode this: <code>Hfr frphevgl gbbyf bayl ba flfgrzf lbh bja</code></summary>
-
-<br>
-
-It is ROT13: every letter moves 13 places, so applying it twice gives the original text back. The line decodes to "Use security tools only on systems you own", the start of the first principle below. The toolkit has a ROT13 tool under Utilities. ROT13 is an encoding and not encryption, because there is no key.
-
-</details>
-
-<details>
-<summary><b>4.</b> Which response header tells a browser to use only HTTPS for a site from now on?</summary>
-
-<br>
-
-`Strict-Transport-Security` (HSTS). It is one of the six headers the toolkit's security-header check looks for, next to `Content-Security-Policy`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and `Permissions-Policy`.
-
-</details>
 
 ## Activity
 
