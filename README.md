@@ -129,9 +129,9 @@ A GitHub Actions [workflow](.github/workflows/profile.yml) redraws this snake fr
 <!-- recent:start -->
 | Repository | Language | Last push | Latest release |
 | --- | --- | --- | --- |
+| [toolkit](https://github.com/memx13/toolkit) | — | 2026-10-31 | [v1.0.0](https://github.com/memx13/toolkit/releases/tag/v1.0.0) |
+| [Extension_Scanner](https://github.com/memx13/Extension_Scanner) | Python | 2026-10-31 | [v1.0.0](https://github.com/memx13/Extension_Scanner/releases/tag/v1.0.0) |
 | [Anket-Smasher](https://github.com/memx13/Anket-Smasher) | JavaScript | 2026-02-02 | — |
-| [Extension_Scanner](https://github.com/memx13/Extension_Scanner) | Python | 2025-12-18 | [v1.0.0](https://github.com/memx13/Extension_Scanner/releases/tag/v1.0.0) |
-| [toolkit](https://github.com/memx13/toolkit) | — | 2025-11-25 | [v1.0.0](https://github.com/memx13/toolkit/releases/tag/v1.0.0) |
 | [toolkitt](https://github.com/memx13/toolkitt) | Python | 2025-10-22 | — |
 | [otobusbileti](https://github.com/memx13/otobusbileti) | C# | 2025-01-06 | — |
 <!-- recent:end -->
