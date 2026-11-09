@@ -79,6 +79,7 @@ Pull requests I have sent to other open-source projects. The first one fixed twy
 <!-- contrib:start -->
 | Project | Pull request | Status |
 | --- | --- | --- |
+| [pySigma](https://github.com/SigmaHQ/pySigma)<br><sub>Python library to parse and convert Sigma rules into queries (and whatever else you could imagine)</sub> | [Allow dashes in "1/all of" selector patterns](https://github.com/SigmaHQ/pySigma/pull/593) | Merged 2026-11-08 |
 | [lightman-ai](https://github.com/elementsinteractive/lightman-ai)<br><sub>LLM-powered cybersecurity news aggregator</sub> | [fix: read the config file as UTF-8](https://github.com/elementsinteractive/lightman-ai/pull/304) | Merged 2026-11-03 |
 | [mitmproxy](https://github.com/mitmproxy/mitmproxy)<br><sub>An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers.</sub> | [Expand ~ in the hardump option](https://github.com/mitmproxy/mitmproxy/pull/8541) | Merged 2026-10-30 |
 | [connectors](https://github.com/OpenCTI-Platform/connectors)<br><sub>OpenCTI Connectors</sub> | [fix(ipinfo): add a timeout to the IPinfo API request (#7901)](https://github.com/OpenCTI-Platform/connectors/pull/8035) | Merged 2026-10-23 |
@@ -89,7 +90,6 @@ Pull requests I have sent to other open-source projects. The first one fixed twy
 | [twyn](https://github.com/elementsinteractive/twyn)<br><sub>Security tool against dependency typosquatting attacks</sub> | [fix: read files included with -r in the requirements.txt parser](https://github.com/elementsinteractive/twyn/pull/551) | Merged 2026-10-10 |
 | [python-evtx](https://github.com/williballenthin/python-evtx)<br><sub>Pure Python parser for Windows Event Log files (.evtx)</sub> | [Guard chunk string/template loaders against cyclic next_offset chains](https://github.com/williballenthin/python-evtx/pull/102) | Open |
 | [sigma](https://github.com/SigmaHQ/sigma)<br><sub>Main Sigma Rule Repository</sub> | [Fix `Apache Spark Shell Command Injection` rules - bash Image filter and CVE number](https://github.com/SigmaHQ/sigma/pull/6495) | Open |
-| [pySigma](https://github.com/SigmaHQ/pySigma)<br><sub>Python library to parse and convert Sigma rules into queries (and whatever else you could imagine)</sub> | [Allow dashes in "1/all of" selector patterns](https://github.com/SigmaHQ/pySigma/pull/593) | Open |
 <!-- contrib:end -->
 
 ## Tools and technologies
